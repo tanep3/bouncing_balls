@@ -64,7 +64,7 @@ git clone <repository-url>
 cd bouncing_balls
 
 # Rustツールチェーンをインストール（未インストールの場合）
-curl --proto '=https' --tlsv1.2 -sSf [https://sh.rustup.rs](https://sh.rustup.rs) | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # wasm-packをインストール
 cargo install wasm-pack
