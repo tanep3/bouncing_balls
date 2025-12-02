@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncing Balls WASM</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            font-family: sans-serif;
+        }
+
+        canvas {
+            border: 1px solid #333;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        #ui {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="ui">
+        <div>Backend: <span id="backend" style="font-weight: bold; color: #4CAF50;">-</span></div>
+        <div>Balls: <span id="ball-count">0</span></div>
+        <div>FPS: <span id="fps">0</span> (Target: <span id="target-fps">60</span>)</div>
+        <div>Frame Time: <span id="frame-time">0</span>ms</div>
+        <div style="font-size: 0.9em; margin-top: 5px;">
+            <div>Update: <span id="time-update">0</span>ms</div>
+            <div>Render: <span id="time-render">0</span>ms</div>
+        </div>
+        <div style="margin-top: 10px; pointer-events: auto;">
+            <button id="btn-webgpu" style="padding: 5px 10px; margin-right: 5px; cursor: pointer;">WebGPU</button>
+            <button id="btn-wasm" style="padding: 5px 10px; margin-right: 5px; cursor: pointer;">WASM</button>
+            <button id="btn-js" style="padding: 5px 10px; cursor: pointer;">Pure JS</button>
+        </div>
+        <div style="margin-top: 10px; pointer-events: auto;">
+            <span style="margin-right: 5px;">FPS Limit:</span>
+            <button id="btn-fps-60"
+                style="padding: 5px 10px; margin-right: 5px; cursor: pointer; background: #4CAF50; color: white; border: none;">60
+                FPS</button>
+            <button id="btn-fps-120"
+                style="padding: 5px 10px; cursor: pointer; background: #555; color: white; border: none;">120
+                FPS</button>
+        </div>
+    </div>
+    <canvas id="canvas"></canvas>
+    <script type="module" src="./index.js"></script>
+</body>
+
+</html>
